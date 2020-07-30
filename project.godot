@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Pong Multiplayer"
-config/description="A multiplayer demo of the classical pong game.
+config/name="DipBall Multiplayer"
+config/description="A multiplayer demo of a 1v1 one touch ball game..
 One of the players should press 'host', while the
 other should select the address and press 'join'."
 run/main_scene="res://lobby.tscn"

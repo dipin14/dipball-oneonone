@@ -21,11 +21,11 @@ func _ready():
 # Callback from SceneTree.
 func _player_connected(_id):
 	# Someone connected, start the game!
-	var pong = load("res://pong.tscn").instance()
+	var field = load("res://field.tscn").instance()
 	# Connect deferred so we can safely erase it from the callback.
-	pong.connect("game_finished", self, "_end_game", [], CONNECT_DEFERRED)
+	field.connect("game_finished", self, "_end_game", [], CONNECT_DEFERRED)
 	
-	get_tree().get_root().add_child(pong)
+	get_tree().get_root().add_child(field)
 	hide()
 
 
@@ -57,9 +57,9 @@ func _server_disconnected():
 ##### Game creation functions ######
 
 func _end_game(with_error = ""):
-	if has_node("/root/Pong"):
+	if has_node("/root/Field"):
 		# Erase immediately, otherwise network might show errors (this is why we connected deferred above).
-		get_node("/root/Pong").free()
+		get_node("/root/Field").free()
 		show()
 	
 	get_tree().set_network_peer(null) # Remove peer.

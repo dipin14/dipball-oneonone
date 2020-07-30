@@ -4,8 +4,8 @@
 [ext_resource path="res://paddle.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 4.78568
-height = 23.6064
+radius = 24.9363
+height = 76.6409
 
 [node name="Paddle" type="Area2D"]
 script = ExtResource( 1 )
@@ -25,4 +25,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "You"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="." to="." method="_on_paddle_area_enter"]
